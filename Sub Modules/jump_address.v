@@ -19,11 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////////////
+// Module Name: jump_address
+// Description: Constructs a 32-bit jump target: {PC[31:28], address, 2'b00}.
+//////////////////////////////////////////////////////////////////////////////////
 
-module jump_address(input [31:0]pc,
-    input [25:0] in_address,
+module jump_address(
+    input  [31:0] pc,
+    input  [25:0] in_address,
     output [31:0] out_address
     );
-    
-    assign out_address = {pc[31:28],in_address,1'b0,1'b0};
+
+    assign out_address = {pc[31:28], in_address, 2'b00};
+
 endmodule

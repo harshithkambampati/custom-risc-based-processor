@@ -18,12 +18,15 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+// Module Name: Sign_extend
+// Description: Sign extends a 16-bit immediate to 32 bits.
+//////////////////////////////////////////////////////////////////////////////////
 
 module Sign_extend(
-    input [15:0] number,
+    input  [15:0] number,
     output [31:0] sign_extended
     );
-    //    reg LSB = ;
-    assign sign_extended= {{16{number[15]}},number};
+
+    assign sign_extended = {{16{number[15]}}, number};
+
 endmodule
